@@ -1,6 +1,7 @@
 ////colors
 //bg:
 $black: #212121;
+$dark-blue: #113d80;
 //texts: 
 $white: #f0f0f0;
 
@@ -15,6 +16,17 @@ $white: #f0f0f0;
 html {
   font-size: 62.5%;
   cursor: crosshair;
+
+  button {
+    width: 15rem;
+    height: 4rem;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 2rem auto;
+    cursor: crosshair;
+    font-size: 1.4rem;
+  }
 }
 
 :root {
@@ -70,22 +82,60 @@ body {
 
         .menu-options {
           .menu-button {
-            display: block;
-            margin: 0 auto 2rem auto;
-            cursor: crosshair;
-            width: 15rem;
-            height: 4rem;
-            border: none;
-            border-radius: 12px;
             background-color: #015c63; 
             color: $white;
-            font-size: 1.4rem;
           }
         }
       }
     }
     section.timer-container {
       font-size: 5.6rem;
+      padding: 2rem;
+      > img {
+        display: block;
+      }
+    }
+
+    section.time-out {
+      width: 100%;
+      height: 100vh;
+      background-color: rgba($dark-blue, $alpha: 0.5);
+      position: fixed;
+      z-index: 2;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      display: none;
+      visibility: hidden;
+      transition: 1.2s all;
+
+      &.active {
+        display: flex;
+        visibility: visible;
+      }
+
+      .time-out-container {
+        width: min(90%, 30rem);
+
+        .time-out-message {
+          width: 100%;
+          margin-bottom: 2rem;
+
+          > h2 {
+            font-size: 3.2rem;
+          }
+
+          > img {
+            width: 15rem;
+          }
+
+          > p {
+            font-size: 2rem;
+          }
+        }
+      }
     }
   }
 
@@ -100,7 +150,7 @@ body {
 
     #score {
       transition: 0.5s all;
-      width: 10rem;
+      font-size: 2.8rem;
       display: block;
       
     }
