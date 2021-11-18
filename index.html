@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--CSS-->
+  <link rel="stylesheet" href="./styles/index.css">
+  <!--FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;900&display=swap" rel="stylesheet">
+  <title>AIM!</title>
+</head>
+<body>
+  <main>
+    <section class="timer-container">
+      <span class="timer"></span>
+    </section>
+
+    <section class="main-menu">
+      <div class="menu-container">
+        <img src="https://pngimg.com/uploads/aim/aim_PNG25.png" alt="aim! logo">
+        <h1>AIM!</h1>
+
+      <div class="menu-options">
+        <button id="start" class="menu-button">PLAY!</button>
+        <button class="menu-button">Como jogar?</button>
+      </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span id="score"></span>
+  </footer>
+
+  <script type="module" >
+    import { target, gameConfig } from './main.js'
+
+  
+    const playButton = document.querySelector('#start')
+    playButton.addEventListener('click', () => {
+      const menu = document.querySelector('.main-menu')
+      menu.classList.toggle('hide')
+
+      target.printResults()
+      gameConfig.timer()
+    })
+
+  </script>
+</body>
+</html>
