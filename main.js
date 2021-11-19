@@ -1,3 +1,5 @@
+import { gameConfig } from "./scripts/timer.js"
+
 const target = {
   create() {
     //cria o circulo na tela
@@ -47,33 +49,4 @@ const target = {
   }
 }
 
-const gameConfig = {
-  time: 60,
-  //cria um timer de 120 segundos e imprime na tela
-  timer () {
-    const timer = setInterval(() => {
-      if(this.time <= 0) {
-        //para o timer
-        clearInterval(timer)
-        // exibe a mensagem de tempo esgotado
-        const timeOver = document.querySelector('.time-out')
-        timeOver.classList.toggle('active')
-
-        const finalScore = document.querySelector('#finalScore')
-        const score = document.querySelector('#score')
-        finalScore.textContent = `você acertou ${score.textContent[0] + score.textContent[1]} disparos com precisão`
-        console.log(score.textContent)
-      }
-      
-      
-      const timeOnScreen = document.querySelector('.timer')
-
-      if(this.time <= 10) timeOnScreen.style.color = "#f48d79"
-
-      timeOnScreen.textContent = this.time
-      this.time--
-    },1000)
-  }
-}
-
-export { target, gameConfig }
+export { target }

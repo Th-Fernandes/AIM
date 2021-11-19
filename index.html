@@ -39,8 +39,8 @@
           <p id="finalScore">você deu 10 disparos com precisão</p>
         </div>
         <div class="time-out-options">
-          <button class="menu-button">Jogar novamente</button>
-          <button class="menu-button">Voltar ao menu</button>
+          <button id="playAgain" class="menu-button">Jogar novamente</button>
+          <button id="backToMenu" class="menu-button">Voltar ao menu</button>
         </div>
       </div>
     </section>
@@ -51,16 +51,20 @@
   </footer>
 
   <script type="module" >
-    import { target, gameConfig } from './main.js'
+    import { target } from './main.js'
+    import { gameConfig } from './scripts/timer.js'
+    import {toggleMenuBg} from './scripts/menu.js'
+
+    toggleMenuBg()
   
     function startGame() {
       const playButton = document.querySelector('#start')
-    playButton.addEventListener('click', () => {
-      const menu = document.querySelector('.main-menu')
-      menu.classList.toggle('hide')
+      playButton.addEventListener('click', () => {
+        const menu = document.querySelector('.main-menu')
+        menu.classList.toggle('hide')
 
-      target.printResults()
-      gameConfig.timer()
+        target.printResults()
+        gameConfig.timer()
     })
     }
 

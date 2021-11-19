@@ -36,8 +36,8 @@ body main {
 }
 body main .target {
   background-color: #017075;
-  width: 120px;
-  height: 120px;
+  width: 60px;
+  height: 60px;
   border: 2px solid #f0f0f0;
   border-radius: 50%;
   position: relative;
@@ -55,7 +55,7 @@ body main section.main-menu {
   width: 100%;
   height: 100vh;
   background-color: #0f0f0f;
-  transition: 2s all;
+  transition: 5s all;
 }
 body main section.main-menu.hide {
   display: none;
