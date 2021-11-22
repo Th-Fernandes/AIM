@@ -96,8 +96,7 @@ body {
 
             &:hover {
               transform: rotate(-3deg) scale(1.1);
-              filter: drop-shadow(0 0 70px $white);
-              filter: hue-rotate(45deg)
+              filter: drop-shadow(0 0 70px $white) hue-rotate(45deg);
             }
           }
         }

@@ -85,8 +85,7 @@ body main section.main-menu .menu-container .menu-options .menu-button {
 }
 body main section.main-menu .menu-container .menu-options .menu-button:hover {
   transform: rotate(-3deg) scale(1.1);
-  filter: drop-shadow(0 0 70px #f0f0f0);
-  filter: hue-rotate(45deg);
+  filter: drop-shadow(0 0 70px #f0f0f0) hue-rotate(45deg);
 }
 body main section.main-menu .menu-container .explication > ul {
   list-style-type: none;
