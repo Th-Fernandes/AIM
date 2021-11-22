@@ -21,14 +21,14 @@
 
     <section class="main-menu">
       <div class="menu-container">
-        <img src="https://pngimg.com/uploads/aim/aim_PNG25.png" alt="aim! logo">
+        <img id="logo"  src="https://pngimg.com/uploads/aim/aim_PNG25.png" alt="aim! logo">
         <h1>AIM!</h1>
 
-      <div class="menu-options">
-        <button id="start" class="menu-button">PLAY!</button>
-        <button class="menu-button">Como jogar?</button>
-      </div>
-      </div>
+        <div class="menu-options">
+          <button id="start" class="menu-button">PLAY!</button>
+          <button id="howToPlay" class="menu-button">Como jogar?</button>
+        </div>     
+    </div>
     </section>
 
     <section class="time-out">
@@ -49,27 +49,14 @@
   <footer>
     <span id="score"></span>
   </footer>
-
-  <script type="module" >
-    import { target } from './main.js'
-    import { gameConfig } from './scripts/timer.js'
-    import {toggleMenuBg} from './scripts/menu.js'
-
-    toggleMenuBg()
-  
-    function startGame() {
-      const playButton = document.querySelector('#start')
-      playButton.addEventListener('click', () => {
-        const menu = document.querySelector('.main-menu')
-        menu.classList.toggle('hide')
-
-        target.printResults()
-        gameConfig.timer()
-    })
-    }
-
-    startGame()
-
-  </script>
+  <script src="./main.js" type="module" > </script>
 </body>
 </html>
+
+<!--
+  A FAZER:
+  * IMPRIMIR AO FUNDO DO JOGO A PONTUÇÃO 
+  * ARRUMAR O BUG DE N CONSEGUIR FECHAR O MODAL DE TUTORIAL
+  * 
+
+-->

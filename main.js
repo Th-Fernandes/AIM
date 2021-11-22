@@ -1,52 +1,26 @@
-import { gameConfig } from "./scripts/timer.js"
+import { target } from './scripts/target.js'
+import { gameConfig } from './scripts/timer.js'
+import { menu } from './scripts/menu.js'
 
-const target = {
-  create() {
-    //cria o circulo na tela
-    const createTarget = document.createElement('div')
-    createTarget.classList.add('target')
-    let score = 0
-    // ao clicar, contabiliza pontos
-    createTarget.addEventListener('click', () => {
-      score++
-      //imprime a pontuação na tela
-      const printScore = document.querySelector('#score')
-      printScore.textContent = `${score} shoots!!`
-      printScore.classList.add('active')
-      setTimeout(() => printScore.classList.remove('active'), 500)
-  })
+//troca a cor de fundo do menu principal a cada certo tempo
+menu.toggleMenuBg()
+menu.tutorialModal()
+menu.aimAnimation()
+//configura o botão do menu principal, para poder jogar e recomeçar o jogo por ele
+function startGame() {
+  const playButton = document.querySelector('#start')
+  playButton.addEventListener('click', () => {
+    const menu = document.querySelector('.main-menu')
+    menu.classList.toggle('hide')
+
+    const timeOver = document.querySelector('.time-out')
+    timeOver.classList.remove('active')
     
-    return createTarget
-  },
-  // gera dois números aleatórios, que posteriormente serão usados para gerar posições aleatórias para o alvo 
-  position() {
-    const randomNumber = () => Math.round(Math.random() * 60)
-    const positions = {top: randomNumber(), left: randomNumber()}
-    
-    return positions
-  },
-  //gera na tela o alvo, com posições aleatórias, usando as funções acima
-  printResults() {
-    const target = this.create()
+    gameConfig.time = 60
 
-    const screen = document.querySelector('main')
-    screen.appendChild(target)
-
-
-    const positions = () =>  this.position() 
-
-    const printPositions = setInterval(() => {
-      target.style.top = `${positions().top}%`
-      target.style.left = `${positions().left}%`
-    }, 900)
-    //para de gerar novas posições pro alvo quando acaba o tempo  
-    const verifyTime = setInterval(() => {
-      if(gameConfig.time <= 0) {
-        clearInterval(printPositions)
-        clearInterval(verifyTime)
-      }
-    }, 1000);
-  }
+    target.printResults()
+    gameConfig.timer()
+})
 }
 
-export { target }
+startGame()

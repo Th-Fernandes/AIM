@@ -1,7 +1,7 @@
-import { target } from "../main.js"
+import { target } from "./target.js"
 
 const gameConfig = {
-  time: 6,
+  time: 12,
   //cria um timer de 120 segundos e imprime na tela
   timer () {
     const timer = setInterval(() => {
@@ -16,6 +16,11 @@ const gameConfig = {
         const score = () => {
           let score = document.querySelector('#score')
           score = score.textContent[0] + score.textContent[1]
+          
+          if(isNaN(score)) {
+            score = 0
+          }
+
           return score
         }
         
@@ -26,7 +31,13 @@ const gameConfig = {
       }
       const timeOnScreen = document.querySelector('.timer')
 
-      if(this.time <= 10) timeOnScreen.style.color = "#f48d79"
+      if(this.time <= 10) {
+        timeOnScreen.style.color = "#f48d79"
+      }
+
+      else {
+        timeOnScreen.style.color = "#f0f0f0";
+      }
 
       timeOnScreen.textContent = this.time
       this.time--
