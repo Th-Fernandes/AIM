@@ -1,7 +1,7 @@
 import { target } from "./target.js"
 
 const gameConfig = {
-  time: 12,
+  time: 60,
   //cria um timer de 120 segundos e imprime na tela
   timer () {
     const timer = setInterval(() => {
@@ -12,22 +12,24 @@ const gameConfig = {
         const timeOver = document.querySelector('.time-out')
         timeOver.classList.toggle('active')
 
-        const finalScore = document.querySelector('#finalScore')
         const score = () => {
           let score = document.querySelector('#score')
+          const finalScore = document.querySelector('#finalScore')
           score = score.textContent[0] + score.textContent[1]
           
           if(isNaN(score)) {
-            score = 0
+            return finalScore.textContent = `tem alguém ai? você não acertou nenhum disparo de precisão`
           }
 
-          return score
+          return finalScore.textContent = `você acertou ${score} disparos com precisão`
         }
+        score()
         
-        finalScore.textContent = `você acertou ${score()} disparos com precisão`
-        
-        const removeTarget = document.querySelector('.target')
-        removeTarget.remove()
+        const removeTarget = () => {
+          const target = document.querySelector('.target')
+          target.remove()
+        }
+        removeTarget()
       }
       const timeOnScreen = document.querySelector('.timer')
 
