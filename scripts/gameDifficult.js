@@ -1,5 +1,5 @@
 const difficultSettings = {
-  easy: 600,
+  easy: 800,
   balanced: 400,
   hard: 250,
   difficultSelected: undefined, 

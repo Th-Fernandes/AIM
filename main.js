@@ -21,7 +21,7 @@ function startGame() {
     const timeOver = document.querySelector('.time-out')
     timeOver.classList.remove('active')
     
-    gameConfig.time = 6
+    gameConfig.time = 60
 
     target.printResults()
     gameConfig.timer()
