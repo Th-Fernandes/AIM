@@ -1,0 +1,39 @@
+/* global settings */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+html {
+  font-size: 62.5%;
+  cursor: crosshair;
+  --white: #f0f0f0;
+}
+
+html button {
+    width: 15rem;
+    height: 4rem;
+    border: none;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto 2rem auto;
+    cursor: crosshair;
+    font-size: 1.4rem;
+}
+
+html ul {
+  list-style-type: none;
+}
+
+:root {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: var(--white);
+}

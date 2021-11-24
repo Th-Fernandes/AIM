@@ -20,11 +20,10 @@ const menu = {
   tutorialModal() {
     const tutorialButton = document.querySelector('#howToPlay')
     //const menu = document.querySelector('.menu-container')
-
     tutorialButton.addEventListener('click', () => {
       const mainContainer = document.querySelector('main')
 
-      if(mainContainer.children[3] == undefined) {
+      if(mainContainer.children[4] == undefined) {
       mainContainer.appendChild(tutorialModal)
       console.log(tutorialModal.parentElement.children[1])
       mainContainer.insertBefore(tutorialModal, tutorialModal.parentElement.children[1])

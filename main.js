@@ -14,6 +14,7 @@ menuAnimations()
 function startGame() {
   const playButton = document.querySelector('#start')
   playButton.addEventListener('click', () => {
+    if(difficultSettings.difficultSelected != undefined) {
     const menu = document.querySelector('.main-menu')
     menu.classList.toggle('hide')
 
@@ -24,6 +25,11 @@ function startGame() {
 
     target.printResults()
     gameConfig.timer()
+    }
+    
+    else {
+      alert('você precisa selecionar uma dificuldade para começar o jogo')
+    }
   })
 }
 startGame()
